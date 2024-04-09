@@ -8,11 +8,11 @@ function get_latest_version() {
 	echo "Linux Redirection Test"
 }
 
-# 1 redirect stdout stream to stderr stream
-echo "the current version of foo is $(get_latest_version 1>&2 )"
-
-# 2 print everything both stdout as well as sterr
+# 1 print everything both stdout as well as sterr
 echo "the current version of foo is $(get_latest_version)"
+
+# 2 redirect stdout stream to stderr stream
+echo "the current version of foo is $(get_latest_version 1>&2 )"
 
 # 3 redirect stdout stream to /dev/null | only print stderr
 echo "the current version of foo is $(get_latest_version 1>/dev/null)"
@@ -22,7 +22,6 @@ echo "the current version of foo is $(get_latest_version 2>/dev/null)"
 
 # 5 redirect stdout stream to output_log.txt file and stderr stream to error_log.txt file
 echo "the current version of foo is $(get_latest_version 2>error_log.txt 1>output_log.txt)"
-
 
 ## 6 watch the order of streams being redirected
 # 1 redirect stderr to /dev/null and stdout to stderr resulting in both streams being redirected to /dev/null
