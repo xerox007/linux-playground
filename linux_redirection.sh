@@ -8,6 +8,8 @@ function get_latest_version() {
 	echo "Linux Redirection Test"
 }
 
+
+### Execute each echo at a time to avoid confusion
 # 1 print everything both stdout as well as sterr
 echo "the current version of foo is $(get_latest_version)"
 
